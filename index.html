@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"><title>링컨 타운카 부품 모음</title>
+<style>
+:root{--bg:#fff;--card:#fff;--tx:#0a0a0a;--mut:#737373;--bd:#e5e5e5;--mu:#f5f5f5;--ac:#171717;--acx:#fafafa;--ring:rgba(10,10,10,.18);--ok:#15803d;--okb:#f0fdf4;--okd:#bbf7d0;--no:#dc2626;--nob:#fef2f2;--nod:#fecaca;--wa:#a16207;--wab:#fefce8;--r:10px;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--card:#171717;--tx:#fafafa;--mut:#a3a3a3;--bd:rgba(255,255,255,.1);--mu:#262626;--ac:#e5e5e5;--acx:#171717;--ring:rgba(250,250,250,.22);--ok:#4ade80;--okb:rgba(34,197,94,.1);--okd:rgba(34,197,94,.3);--no:#f87171;--nob:rgba(239,68,68,.1);--nod:rgba(239,68,68,.3);--wa:#facc15;--wab:rgba(234,179,8,.1);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--card:#171717;--tx:#fafafa;--mut:#a3a3a3;--bd:rgba(255,255,255,.1);--mu:#262626;--ac:#e5e5e5;--acx:#171717;--ring:rgba(250,250,250,.22);--ok:#4ade80;--okb:rgba(34,197,94,.1);--okd:rgba(34,197,94,.3);--no:#f87171;--nob:rgba(239,68,68,.1);--nod:rgba(239,68,68,.3);--wa:#facc15;--wab:rgba(234,179,8,.1);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 16px 56px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--bd);margin-bottom:8px}
+h1{margin:0;font-size:30px;font-weight:700;letter-spacing:-.025em}
+.sub{color:var(--mut);font-size:14px;margin-top:4px}
+h2{font-size:20px;font-weight:600;letter-spacing:-.015em;margin:32px 0 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+button,select,input,textarea{font:inherit;color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:36px;padding:0 16px;border:1px solid transparent;border-radius:8px;background:var(--ac);color:var(--acx);font-size:14px;font-weight:500;cursor:pointer;transition:opacity .15s,background .15s}
+.btn:hover{opacity:.9}
+a.btn{text-decoration:none}
+.btn.g{background:var(--bg);color:var(--tx);border-color:var(--bd);box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.btn.g:hover{background:var(--mu);opacity:1}
+.btn.s{height:32px;padding:0 12px;font-size:13px}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.tabs button:focus-visible{outline:0;box-shadow:0 0 0 3px var(--ring)}
+.badge{display:inline-flex;align-items:center;font-size:12px;font-weight:500;line-height:1;padding:4px 8px;border-radius:6px;background:var(--mu);color:var(--tx);border:1px solid var(--bd)}
+.tabs{display:inline-flex;gap:2px;padding:3px;margin-bottom:16px;border-radius:10px;background:var(--mu)}
+.tabs button{border:0;background:transparent;border-radius:7px;padding:5px 14px;font-size:13px;font-weight:500;color:var(--mut);cursor:pointer}
+.tabs button.on{background:var(--card);color:var(--tx);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.card img,.ph{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--mu);display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:13px;border-bottom:1px solid var(--bd)}
+.cb{padding:16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.cb .t{font-weight:600;font-size:16px;letter-spacing:-.01em}
+.cb .m{color:var(--mut);font-size:13px}
+.cb .p{font-size:20px;font-weight:700;letter-spacing:-.02em;margin-top:4px}
+.cb .d{font-size:14px;color:var(--mut);white-space:pre-wrap}
+.st{align-self:flex-start;font-size:12px;font-weight:500;padding:3px 8px;border-radius:6px;border:1px solid transparent;margin-bottom:4px}
+.st.sale{background:var(--okb);color:var(--ok);border-color:var(--okd)}
+.st.reserved{background:var(--wab);color:var(--wa);border-color:var(--bd)}
+.st.sold{background:var(--nob);color:var(--no);border-color:var(--nod)}
+.acts{display:flex;gap:8px;margin-top:10px}
+.empty{color:var(--mut);padding:48px 16px;text-align:center;border:1px dashed var(--bd);border-radius:12px}
+.cal{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;max-width:440px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:600;font-size:14px}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cg .w{font-size:12px;color:var(--mut);padding:4px 0;font-weight:500}
+.cg .d{aspect-ratio:1;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;border:1px solid transparent}
+.cg .d.ok{background:var(--okb);color:var(--ok);font-weight:600;border-color:var(--okd)}
+.cg .d.no{background:var(--nob);color:var(--no);text-decoration:line-through;border-color:var(--nod)}
+.cg .d.past{opacity:.4}
+.cg .d.today{border-color:var(--tx);font-weight:700}
+.cg .d.ed{cursor:pointer}
+.cg .d.ed:hover{background:var(--mu)}
+.lg{display:flex;gap:14px;font-size:12px;color:var(--mut);margin-top:14px;padding-top:12px;border-top:1px solid var(--bd);flex-wrap:wrap}
+.lg i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+.hint{font-size:13px;color:var(--mut);margin-top:8px}
+dialog{border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);width:min(480px,94vw);padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog h3{font-size:18px;font-weight:600;letter-spacing:-.01em}
+dialog label{display:block;font-size:14px;font-weight:500;margin:14px 0 6px}
+dialog input,dialog select,dialog textarea{width:100%;min-height:36px;padding:7px 12px;border:1px solid var(--bd);border-radius:8px;background:transparent;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+dialog input[type=file]{padding:5px 12px}
+dialog select option{background:var(--card);color:var(--tx)}
+.row{display:flex;gap:12px}.row>*{flex:1}
+footer{margin-top:40px;color:var(--mut);font-size:13px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+</style></head>
+<body><div id="root"></div>
+<script type="application/json" id="data">{"title":"링컨 타운카 부품 모음","contact":"문의: 연락처를 입력해 주세요","items":[],"cal":{}}</script>
+<script id="app">
+const S=JSON.parse(document.getElementById('data').textContent);
+let admin=false,filter='전체',editId=null,timer=null;
+let ym=new Date();ym.setDate(1);
+const $=s=>document.querySelector(s);
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ST={sale:'판매중',reserved:'예약중',sold:'판매완료'};
+const CATS=['엔진·미션','외장','내장','휠·타이어','램프·전장','기타'];
+const key=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+
+function buildDoc(){
+  const data=JSON.stringify(S).replace(/</g,'\\u003c');
+  return '<!doctype html><html lang="ko"><head>'+document.head.innerHTML+'</head><body><div id="root"></div><script type="application/json" id="data">'+data+'<\/script><script id="app">'+document.getElementById('app').textContent+'<\/script></body></html>';
+}
+function save(delay){
+  clearTimeout(timer);
+  timer=setTimeout(async()=>{
+    try{const a=await claude.use('artifact');if(!a){alert('저장 기능을 사용할 수 없습니다.');return;}await a.publish(buildDoc());}
+    catch(e){console.error(e);}
+  },delay||0);
+}
+
+function render(){
+  const items=S.items.filter(i=>filter==='전체'||i.status===filter);
+  const tabs=['전체','sale','reserved','sold'].map(f=>'<button data-f="'+f+'" class="'+(filter===f?'on':'')+'">'+(f==='전체'?'전체':ST[f])+'</button>').join('');
+  const cards=items.map(i=>`<div class="card">${i.img?'<img src="'+i.img+'" alt="">':'<div class="ph">사진 없음</div>'}
+  <div class="cb"><span class="st ${i.status}">${ST[i.status]}</span><div class="t">${esc(i.name)}</div>
+  <div class="m">${esc(i.cat)}${i.fit?' · '+esc(i.fit):''}${i.cond?' · 상태 '+esc(i.cond):''}</div>
+  <div class="p">${i.price?Number(i.price).toLocaleString('ko-KR')+'원':'가격 문의'}</div>
+  ${i.desc?'<div class="d">'+esc(i.desc)+'</div>':''}
+  ${admin?'<div class="acts"><button class="btn g s" data-e="'+i.id+'">수정</button><button class="btn g s" data-x="'+i.id+'">삭제</button></div>':''}</div></div>`).join('');
+  $('#root').innerHTML=`<div class="wrap">
+  <header><div><h1>${esc(S.title)}</h1><div class="sub">${esc(S.contact)}</div></div>
+  ${admin?'<div style="display:flex;gap:8px"><button class="btn" id="add">+ 부품 등록</button><button class="btn g" id="info">사이트 정보</button></div>':'<a class="btn g" id="login" href="https://claude.ai/artifact/YLYsTZpf4qWLunf1n46uPq" target="_blank" rel="noopener">관리자 로그인</a>'}</header>
+  <h2>판매 부품 <span class="badge">${S.items.length}</span></h2>
+  <div class="tabs">${tabs}</div>
+  ${items.length?'<div class="grid">'+cards+'</div>':'<div class="empty">'+(S.items.length?'해당 상태의 부품이 없습니다.':'아직 등록된 부품이 없습니다.')+'</div>'}
+  <h2>거래 가능 일정</h2><div class="cal">${calHtml()}</div>
+  ${admin?'<div class="hint">관리자: 날짜를 누를 때마다 미지정 → 가능 → 불가 순으로 바뀝니다.</div>':''}
+  <footer>${admin?'<span class="badge">관리자 모드</span>':''}</footer></div>`;
+}
+function calHtml(){
+  const y=ym.getFullYear(),m=ym.getMonth(),first=new Date(y,m,1).getDay(),n=new Date(y,m+1,0).getDate(),today=key(new Date());
+  let h='<div class="ch"><button class="btn g s" data-m="-1">‹</button><span>'+y+'년 '+(m+1)+'월</span><button class="btn g s" data-m="1">›</button></div><div class="cg">';
+  '일월화수목금토'.split('').forEach(w=>h+='<div class="w">'+w+'</div>');
+  for(let i=0;i<first;i++)h+='<div></div>';
+  for(let d=1;d<=n;d++){
+    const k=y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    h+='<div class="d '+(S.cal[k]||'')+(k<today?' past':'')+(k===today?' today':'')+(admin?' ed':'')+'" data-d="'+k+'">'+d+'</div>';
+  }
+  return h+'</div><div class="lg"><span><i style="background:var(--okb);border:1px solid var(--ok)"></i>거래 가능</span><span><i style="background:var(--nob);border:1px solid var(--no)"></i>거래 불가</span><span><i style="border:1px solid var(--bd)"></i>미정 (문의)</span></div>';
+}
+
+/* dialog */
+const dlg=document.createElement('dialog');
+dlg.innerHTML=`<h3 style="margin:0 0 4px" id="dt">부품 등록</h3>
+<label>부품명 *</label><input id="f_name" maxlength="60">
+<div class="row"><div><label>분류</label><select id="f_cat">${CATS.map(c=>'<option>'+c+'</option>').join('')}</select></div>
+<div><label>상태 등급</label><select id="f_cond"><option>상</option><option>중</option><option>하</option></select></div></div>
+<label>호환 차종</label><input id="f_fit" placeholder="예: 현대 쏘나타 DN8 (2019~)">
+<div class="row"><div><label>가격 (원)</label><input id="f_price" type="number" min="0"></div>
+<div><label>판매 상태</label><select id="f_st"><option value="sale">판매중</option><option value="reserved">예약중</option><option value="sold">판매완료</option></select></div></div>
+<label>설명</label><textarea id="f_desc" rows="3"></textarea>
+<label>사진</label><input id="f_img" type="file" accept="image/*">
+<div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px"><button class="btn g" id="f_cancel">취소</button><button class="btn" id="f_ok">저장</button></div>`;
+document.body.appendChild(dlg);
+let imgData='';
+function openDlg(id){
+  editId=id;const i=S.items.find(x=>x.id===id)||{};
+  $('#dt').textContent=id?'부품 수정':'부품 등록';
+  $('#f_name').value=i.name||'';$('#f_cat').value=i.cat||CATS[0];$('#f_cond').value=i.cond||'상';
+  $('#f_fit').value=i.fit||'';$('#f_price').value=i.price||'';$('#f_st').value=i.status||'sale';
+  $('#f_desc').value=i.desc||'';$('#f_img').value='';imgData=i.img||'';dlg.showModal();
+}
+$('#f_cancel').onclick=()=>dlg.close();
+$('#f_img').onchange=e=>{
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{const im=new Image();im.onload=()=>{
+    const s=Math.min(1,800/Math.max(im.width,im.height)),c=document.createElement('canvas');
+    c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+    imgData=c.toDataURL('image/jpeg',0.72);};im.src=r.result;};
+  r.readAsDataURL(f);
+};
+$('#f_ok').onclick=()=>{
+  const name=$('#f_name').value.trim();if(!name){$('#f_name').focus();return;}
+  const o={name,cat:$('#f_cat').value,cond:$('#f_cond').value,fit:$('#f_fit').value.trim(),price:$('#f_price').value,status:$('#f_st').value,desc:$('#f_desc').value.trim(),img:imgData};
+  if(editId){Object.assign(S.items.find(x=>x.id===editId),o);}
+  else{o.id='p'+Date.now();S.items.unshift(o);}
+  dlg.close();render();save(0);
+};
+
+/* events */
+document.addEventListener('click',e=>{
+  const t=e.target.closest('button,[data-d]');if(!t)return;
+  if(t.dataset.f){filter=t.dataset.f;render();}
+  else if(t.id==='add')openDlg(null);
+  else if(t.dataset.e)openDlg(t.dataset.e);
+  else if(t.dataset.x){if(confirm('이 부품을 삭제할까요?')){S.items=S.items.filter(x=>x.id!==t.dataset.x);render();save(0);}}
+  else if(t.id==='info'){
+    const a=prompt('사이트 제목',S.title);if(a===null)return;
+    const b=prompt('연락처 / 안내 문구',S.contact);if(b===null)return;
+    S.title=a.trim()||S.title;S.contact=b.trim();render();save(0);
+  }
+  else if(t.dataset.m){ym.setMonth(ym.getMonth()+Number(t.dataset.m));render();}
+  else if(t.dataset.d&&admin){
+    const k=t.dataset.d,c=S.cal[k];
+    if(!c)S.cal[k]='ok';else if(c==='ok')S.cal[k]='no';else delete S.cal[k];
+    render();save(1200);
+  }
+});
+
+render();
+(async()=>{
+  try{const u=await claude.use('user');if(u&&(u.isOwner()||u.canEdit())){admin=true;render();}}catch(e){}
+})();
+</script></body></html>
